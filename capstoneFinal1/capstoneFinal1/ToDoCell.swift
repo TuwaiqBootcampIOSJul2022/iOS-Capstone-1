@@ -18,6 +18,9 @@ class ToDoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        dueLabel.layer.cornerRadius = 16
+        titleLabel.layer.cornerRadius = 16
+        
         // Initialization code
     }
 

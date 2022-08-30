@@ -17,6 +17,7 @@
 		013AFF7828BC11D300189F0A /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AFF7728BC11D300189F0A /* ToDoTableViewController.swift */; };
 		01BBBAE028BD5A0A000B0C74 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBBADF28BD5A0A000B0C74 /* SecondTableViewController.swift */; };
 		01BBBAE228BD9226000B0C74 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBBAE128BD9226000B0C74 /* ToDoCell.swift */; };
+		01F77FFD28BE987300E13FE3 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F77FFC28BE987300E13FE3 /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		013AFF7728BC11D300189F0A /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		01BBBADF28BD5A0A000B0C74 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		01BBBAE128BD9226000B0C74 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		01F77FFC28BE987300E13FE3 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				013AFF6328BC0BD400189F0A /* SceneDelegate.swift */,
 				013AFF6528BC0BD400189F0A /* ViewController.swift */,
 				013AFF7528BC0D3800189F0A /* ToDo.swift */,
+				01F77FFC28BE987300E13FE3 /* Document.swift */,
 				013AFF6728BC0BD400189F0A /* Main.storyboard */,
 				01BBBAE128BD9226000B0C74 /* ToDoCell.swift */,
 				013AFF7728BC11D300189F0A /* ToDoTableViewController.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F77FFD28BE987300E13FE3 /* Document.swift in Sources */,
 				013AFF6628BC0BD400189F0A /* ViewController.swift in Sources */,
 				01BBBAE028BD5A0A000B0C74 /* SecondTableViewController.swift in Sources */,
 				01BBBAE228BD9226000B0C74 /* ToDoCell.swift in Sources */,

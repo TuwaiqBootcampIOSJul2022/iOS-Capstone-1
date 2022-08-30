@@ -28,18 +28,24 @@ class ToDoTableViewController: UITableViewController,ToDoDelegate {
         if editingStyle == .delete{
             toDos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDo(toDos)
         }
     }
     @IBAction func unWindToDo(segue: UIStoryboardSegue){
         guard segue.identifier == "unWindSave" else {return}
         let sourceView = segue.source as! SecondTableViewController
-        if let todo = sourceView.todo {
-            let newIndexPath = IndexPath(row: toDos.count, section: 0)
-            toDos.append(todo)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        if let toDo = sourceView.todo {
+            if let indexOfToDo = toDos.firstIndex(of: toDo){
+                toDos[indexOfToDo] = toDo
+                tableView.reloadRows(at: [IndexPath(row: indexOfToDo, section: 0)], with: .automatic)
+            }else{
+                let newIndexPath = IndexPath(row: toDos.count, section: 0)
+                toDos.append(toDo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                }
         }
         
-        
+        ToDo.saveToDo(toDos)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -52,6 +58,7 @@ class ToDoTableViewController: UITableViewController,ToDoDelegate {
         cell.titleLabel.text = toDo.title
         cell.isComplatedButton.isSelected = toDo.isComplete
         cell.dueLabel.text = "\(toDo.duwDate.formatted(.dateTime.month(.defaultDigits).day().year(.twoDigits).hour().minute()))"
+        cell.layer.cornerRadius = 16
 //        var content = cell.defaultContentConfiguration()
 //        content.text = toDo.title
 //        cell.contentConfiguration = content
@@ -64,6 +71,7 @@ class ToDoTableViewController: UITableViewController,ToDoDelegate {
             toDo.isComplete.toggle()
             toDos[indexPath.row] = toDo
             tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDo(toDos)
         }
     }
     @IBSegueAction func editToDo(_ coder: NSCoder, sender: Any?) -> SecondTableViewController? {

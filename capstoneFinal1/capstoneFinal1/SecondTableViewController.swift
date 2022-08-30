@@ -11,12 +11,18 @@ class SecondTableViewController: UITableViewController {
     @IBOutlet weak var savePrees: UIBarButtonItem!
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var dueDate: UILabel!
+    @IBOutlet weak var DueDateOutlet: UIView!
     @IBOutlet weak var datePiker: UIDatePicker!
     @IBOutlet weak var taskTitle: UITextField!
     @IBOutlet weak var isCompleted: UIButton!
     var todo:ToDo?
     override func viewDidLoad() {
         super.viewDidLoad()
+        notes.layer.cornerRadius = 16
+        dueDate.layer.cornerRadius = 16
+        datePiker.layer.cornerRadius = 16
+        taskTitle.layer.cornerRadius = 16
+        DueDateOutlet.layer.cornerRadius = 16
         let correntDueDate:Date
         if let todo = todo {
             navigationItem.title = "To-Do"
@@ -27,10 +33,9 @@ class SecondTableViewController: UITableViewController {
         }else {
             correntDueDate = Date().addingTimeInterval(24*60*60)
         }
-        updateSavePress()
         updateDueDate(date: correntDueDate)
         datePiker.date = correntDueDate
-        datePiker.date = Date().addingTimeInterval(24*60*60)
+        updateSavePress()
     }
     func updateDueDate(date: Date){
         dueDate.text = date.formatted(.dateTime.month(.defaultDigits).day().year(.twoDigits).hour().minute())
@@ -61,7 +66,7 @@ class SecondTableViewController: UITableViewController {
         let complated = isCompleted.isSelected
         let dueDate = datePiker.date
         let note = notes.text
-        todo = ToDo(title: title, isComplete: complated, duwDate: dueDate, notes: note!)
+        todo = ToDo(title: title, isComplate: complated, dueDate: dueDate, notes: note!)
     }
 //    @IBSegueAction func editeTodo1(_ coder: NSCoder,sender: Any?) -> SecondTableViewController? {
 //        let deitals = SecondTableViewController(coder: coder)
