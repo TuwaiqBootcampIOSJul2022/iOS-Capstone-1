@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="100" id="KGk-i7-Jjw" customClass="TaskCell" customModule="ToDoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ON-dX-zJW">
+                        <rect key="frame" x="17" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="MfN-tM-7Ku"/>
+                            <constraint firstAttribute="height" constant="40" id="tlO-ZT-XFc"/>
+                        </constraints>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                        <connections>
+                            <action selector="taskComplete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xdO-kr-w9n"/>
+                        </connections>
+                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Duj-FN-ztx">
+                        <rect key="frame" x="67" y="14" width="232" height="73.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان المهمة" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djH-Aa-Dx6">
+                                <rect key="frame" x="0.0" y="0.0" width="232" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ  استحقاق المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-Oa-dkD">
+                                <rect key="frame" x="0.0" y="26.5" width="232" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اذا كانت فاتت موعدها" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-1R-R9Y">
+                                <rect key="frame" x="0.0" y="53" width="232" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="232" id="rfW-g6-PX3"/>
+                            <constraint firstAttribute="height" constant="73.5" id="vnz-7V-HP7"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Duj-FN-ztx" secondAttribute="trailing" constant="16" id="B2h-XM-Odk"/>
+                    <constraint firstAttribute="bottom" secondItem="Duj-FN-ztx" secondAttribute="bottom" constant="12.5" id="FMU-aq-TEa"/>
+                    <constraint firstItem="3ON-dX-zJW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="Hr9-rT-PjB"/>
+                    <constraint firstItem="Duj-FN-ztx" firstAttribute="leading" secondItem="3ON-dX-zJW" secondAttribute="trailing" constant="10" id="VCD-gi-6R1"/>
+                    <constraint firstItem="Duj-FN-ztx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="VaY-ep-cll"/>
+                    <constraint firstAttribute="bottom" secondItem="3ON-dX-zJW" secondAttribute="bottom" constant="30" id="eba-ma-E9e"/>
+                    <constraint firstItem="3ON-dX-zJW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="rZT-e9-Tse"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="taskComplete" destination="3ON-dX-zJW" id="TVB-lZ-8Ov"/>
+                <outlet property="taskDate" destination="Smf-Oa-dkD" id="dQi-jc-Kvi"/>
+                <outlet property="taskLate" destination="MKW-1R-R9Y" id="wbI-jy-lay"/>
+                <outlet property="taskTitle" destination="djH-Aa-Dx6" id="Ry6-WV-S0k"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="32" height="32"/>
+    </resources>
+</document>
