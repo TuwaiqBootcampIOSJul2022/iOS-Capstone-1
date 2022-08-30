@@ -7,6 +7,7 @@ import UIKit
 class secondToDoTable: UITableViewController {
 
 
+    @IBOutlet weak var dueDate: UIView!
     @IBOutlet var tableViewStatic: UITableView!
     @IBOutlet weak var duaLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -20,6 +21,7 @@ class secondToDoTable: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dueDate.layer.cornerRadius = 10
         
         let curDate : Date
         if let taskList = taskList{
@@ -56,14 +58,8 @@ class secondToDoTable: UITableViewController {
     
     @IBAction func returnPressed(_ sender: UITextField) {
         sender.resignFirstResponder()
-        
-        saveData()
-
     }
     
-    @IBAction func selectBtn(_ sender: UIButton) {
-        
-    }
     
     func dateUpdate(date: Date) {
         duaLabel.text = date.formatted(.dateTime.month(.defaultDigits).day().year(.twoDigits).hour().minute())
@@ -73,18 +69,22 @@ class secondToDoTable: UITableViewController {
         
         let EnableSaveBtn = textField.text?.isEmpty == false
         saveBtn.isEnabled = EnableSaveBtn
-        
     }
+    
     
     @IBAction func dueDate(_ sender: UIDatePicker) {
         
         dateUpdate(date: sender.date)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard segue.identifier == "save" else {return}
+        guard segue.identifier == "save" else {
+            print("isn't the same idenifier")
+            return
+        }
         
         let title = textField.text!
         let complete = completeBtn.isSelected
@@ -101,22 +101,7 @@ class secondToDoTable: UITableViewController {
             } else {
                 taskList = TaskList(title: title, isComplete: complete,
                    dueDate: Date, notes: note)
-            }
-
+        }
     }
-    
-    @objc func saveData(){
-        
-        guard let text = textField.text, !text.isEmpty else {return}
-        
-        guard let count = UserDefaults().value(forKey: "count") as? Int else {return}
-        
-        let newCount = count + 1
-        
-        UserDefaults().set(newCount, forKey: "count")
-        UserDefaults().set(text, forKey: "task_\(newCount)")
-
-    }
-    
-    }
+}
 
