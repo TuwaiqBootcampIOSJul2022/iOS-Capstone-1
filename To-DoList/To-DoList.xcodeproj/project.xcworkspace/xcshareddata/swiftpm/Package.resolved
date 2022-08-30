@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ALProgressView",
+        "repositoryURL": "https://github.com/alxrguz/ALProgressView.git",
+        "state": {
+          "branch": null,
+          "revision": "54f42cb339924de1b37fe8ecdbe72a3336cbc73d",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "M13Checkbox",
+        "repositoryURL": "https://github.com/Marxon13/M13Checkbox.git",
+        "state": {
+          "branch": null,
+          "revision": "96ff6c8862db87095315480a56dcebe51e15dac8",
+          "version": "3.4.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
